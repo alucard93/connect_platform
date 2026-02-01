@@ -1,4 +1,5 @@
 import Card from '../componentes/Card'
+import PageSection from '../componentes/PageSection'
 
 export default function Doacao() {
   const cards = [
@@ -26,20 +27,16 @@ export default function Doacao() {
   ]
 
   return (
-    <section className="page-section">
-      <h1 className="page-section__title">Doação</h1>
-
-      <div className="page-section__cards">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            image={card.image}
-            title={card.title}
-            description={card.description}
-            buttonText="Quero Doar"
-          />
-        ))}
-      </div>
-    </section>
+    <PageSection title="Doação">
+      {cards.map((card) => (
+        <Card
+          key={card.id}
+          image={card.image}
+          title={card.title}
+          description={card.description}
+          buttonText="Quero Doar"
+        />
+      ))}
+    </PageSection>
   )
 }

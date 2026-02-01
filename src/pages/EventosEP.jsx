@@ -1,4 +1,5 @@
 import Card from '../componentes/Card'
+import PageSection from '../componentes/PageSection'
 
 export default function EventosEP() {
   const cards = [
@@ -30,21 +31,17 @@ export default function EventosEP() {
   ]
 
   return (
-    <section className="page-section">
-      <h1 className="page-section__title">Eventos & Palestras</h1>
-
-      <div className="page-section__cards">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            image={card.image}
-            title={card.title}
-            activity={card.activity}
-            impact={card.impact}
-            buttonText="Quero Participar"
-          />
-        ))}
-      </div>
-    </section>
+    <PageSection title="Eventos & Palestras">
+      {cards.map((card) => (
+        <Card
+          key={card.id}
+          image={card.image}
+          title={card.title}
+          activity={card.activity}
+          impact={card.impact}
+          buttonText="Quero Participar"
+        />
+      ))}
+    </PageSection>
   )
 }

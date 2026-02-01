@@ -1,4 +1,5 @@
 import Card from '../componentes/Card'
+import PageSection from '../componentes/PageSection'
 
 export default function Voluntariado() {
   const cards = [
@@ -26,20 +27,16 @@ export default function Voluntariado() {
   ]
 
   return (
-    <section className="page-section">
-      <h1 className="page-section__title">Voluntariado</h1>
-
-      <div className="page-section__cards">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            image={card.image}
-            title={card.title}
-            description={card.description}
-            buttonText="Quero participar"
-          />
-        ))}
-      </div>
-    </section>
+    <PageSection title="Voluntariado">
+      {cards.map((card) => (
+        <Card
+          key={card.id}
+          image={card.image}
+          title={card.title}
+          description={card.description}
+          buttonText="Quero participar"
+        />
+      ))}
+    </PageSection>
   )
 }

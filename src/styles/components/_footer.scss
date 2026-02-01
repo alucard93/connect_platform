@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+
+  height: 64px;
+  background: rgba(#075985, 0.1);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 480px) {
+    height: 48px;
+    font-size: 14px;
+  }
+}

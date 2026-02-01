@@ -1,0 +1,15 @@
+@mixin container {
+  width: min(#{$container-max}, 92%);
+  margin: 0 auto;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin respond-md {
+  @media (max-width: 900px) {
+    @content;
+  }
+}

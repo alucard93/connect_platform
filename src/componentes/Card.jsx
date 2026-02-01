@@ -5,6 +5,7 @@ export default function Card({
   activity,
   impact,
   buttonText = 'Quero Doar',
+  onButtonClick,
 }) {
   return (
     <article className="card">
@@ -23,7 +24,9 @@ export default function Card({
           </p>
         )}
       </div>
-      <button className="card__button">{buttonText}</button>
+      <button className="card__button" onClick={onButtonClick}>
+        {buttonText}
+      </button>
     </article>
   )
 }

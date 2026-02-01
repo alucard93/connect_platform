@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Card from '../componentes/Card'
 import PageSection from '../componentes/PageSection'
+import Toast from '../componentes/Toast'
 
 export default function Doacao() {
+  const [showToast, setShowToast] = useState(false)
+
   const cards = [
     {
       id: 1,
@@ -26,6 +30,10 @@ export default function Doacao() {
     },
   ]
 
+  const handleDonate = () => {
+    setShowToast(true)
+  }
+
   return (
     <PageSection title="Doação">
       {cards.map((card) => (
@@ -35,8 +43,14 @@ export default function Doacao() {
           title={card.title}
           description={card.description}
           buttonText="Quero Doar"
+          onButtonClick={handleDonate}
         />
       ))}
+      <Toast
+        message="Inscrito com sucesso!"
+        isVisible={showToast}
+        onClose={() => setShowToast(false)}
+      />
     </PageSection>
   )
 }

@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Card from '../componentes/Card'
 import PageSection from '../componentes/PageSection'
+import Toast from '../componentes/Toast'
 
 export default function Voluntariado() {
+  const [showToast, setShowToast] = useState(false)
+
   const cards = [
     {
       id: 1,
@@ -26,6 +30,10 @@ export default function Voluntariado() {
     },
   ]
 
+  const handleParticipate = () => {
+    setShowToast(true)
+  }
+
   return (
     <PageSection title="Voluntariado">
       {cards.map((card) => (
@@ -35,8 +43,14 @@ export default function Voluntariado() {
           title={card.title}
           description={card.description}
           buttonText="Quero participar"
+          onButtonClick={handleParticipate}
         />
       ))}
+      <Toast
+        message="Inscrito com sucesso!"
+        isVisible={showToast}
+        onClose={() => setShowToast(false)}
+      />
     </PageSection>
   )
 }

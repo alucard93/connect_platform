@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Card from '../componentes/Card'
 import PageSection from '../componentes/PageSection'
+import Toast from '../componentes/Toast'
 
 export default function Mentoria() {
+  const [showToast, setShowToast] = useState(false)
+
   const cards = [
     {
       id: 1,
@@ -25,6 +29,10 @@ export default function Mentoria() {
     },
   ]
 
+  const handleParticipate = () => {
+    setShowToast(true)
+  }
+
   return (
     <PageSection title="Mentoria">
       {cards.map((card) => (
@@ -34,8 +42,14 @@ export default function Mentoria() {
           title={card.title}
           description={card.description}
           buttonText="Quero participar"
+          onButtonClick={handleParticipate}
         />
       ))}
+      <Toast
+        message="Inscrito com sucesso!"
+        isVisible={showToast}
+        onClose={() => setShowToast(false)}
+      />
     </PageSection>
   )
 }

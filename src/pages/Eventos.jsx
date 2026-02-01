@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import Card from '../componentes/Card'
+import Toast from '../componentes/Toast'
 
 export default function Eventos() {
+  const [showToast, setShowToast] = useState(false)
+
   const cards = [
     {
       id: 1,
@@ -29,6 +33,10 @@ export default function Eventos() {
     },
   ]
 
+  const handleParticipate = () => {
+    setShowToast(true)
+  }
+
   return (
     <section className="page-section">
       <h1 className="page-section__title">Eventos & Palestras</h1>
@@ -42,9 +50,15 @@ export default function Eventos() {
             activity={card.activity}
             impact={card.impact}
             buttonText="Quero Participar"
+            onButtonClick={handleParticipate}
           />
         ))}
       </div>
+      <Toast
+        message="Inscrito com sucesso!"
+        isVisible={showToast}
+        onClose={() => setShowToast(false)}
+      />
     </section>
   )
 }

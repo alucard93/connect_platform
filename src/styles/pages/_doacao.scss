@@ -1,5 +1,5 @@
 .page-section {
-  padding: 56px 24px 72px;
+  padding: 56px 24px 195px;
   max-width: 1440px;
   margin: 0 auto;
 
@@ -19,7 +19,7 @@
   }
 
   @media (max-width: 1024px) {
-    padding: 40px 16px 56px;
+    padding: 40px 16px 122px;
 
     &__title {
       font-size: 48px;
@@ -39,6 +39,7 @@
 
     &__cards {
       flex-direction: column;
+      align-items: center;
       gap: 100px;
     }
   }

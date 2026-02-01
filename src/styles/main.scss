@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap');
+@use './base/base';
+@use './components/header';
+@use './components/footer';
+@use './pages/page';
+@use './pages/home';
+@use './pages/doacao';
+@use './pages/usuario';
 
-@import './variables';
-@import './mixins';
-@import './base/base';
-@import './components/header';
-@import './components/footer';
-@import './pages/page';
-@import './pages/home';
-@import './pages/doacao';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap');

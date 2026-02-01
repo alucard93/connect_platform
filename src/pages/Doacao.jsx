@@ -1,8 +1,45 @@
+import Card from '../componentes/Card'
+
 export default function Doacao() {
+  const cards = [
+    {
+      id: 1,
+      image: 'https://placehold.co/357x164',
+      title: 'Instituto grande familia',
+      description:
+        'Contribua com alimentos não perecíveis e ajude famílias em situação de vulnerabilidade.',
+    },
+    {
+      id: 2,
+      image: 'https://placehold.co/357x164',
+      title: 'Projeto Futuro na Escola',
+      description:
+        'Doe livros, cadernos, lápis, mochilas e canetas para ajudar jovens a continuarem seus estudos com mais estrutura.',
+    },
+    {
+      id: 3,
+      image: 'https://placehold.co/357x164',
+      title: 'Instituto Conecta Jovem',
+      description:
+        'Doe computadores usados, tablets ou celulares em bom estado para permitir que jovens tenham acesso ao mundo digital e novas oportunidades.',
+    },
+  ]
+
   return (
-    <div>
-      <h1>Tela de Doação</h1>
-      <p>Conteúdo da página de doações aqui.</p>
-    </div>
-  );
+    <section className="page-section">
+      <h1 className="page-section__title">Doação</h1>
+
+      <div className="page-section__cards">
+        {cards.map((card) => (
+          <Card
+            key={card.id}
+            image={card.image}
+            title={card.title}
+            description={card.description}
+            buttonText="Quero Doar"
+          />
+        ))}
+      </div>
+    </section>
+  )
 }
